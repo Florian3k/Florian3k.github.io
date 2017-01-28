@@ -8,6 +8,7 @@ var winCell;
 
 function setup() {
 	createCanvas(601, 601);
+	frameRate(15)
 	cols = floor(width/w);
 	rows = floor(height/w);
 	for (var j = 0; j < rows; j++) {
