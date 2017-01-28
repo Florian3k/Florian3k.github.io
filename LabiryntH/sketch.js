@@ -5,10 +5,12 @@ var stack = [];
 var generating = true;
 var current;
 var winCell;
+var prev;
 
 function setup() {
 	createCanvas(601, 601);
-	frameRate(15)
+	background(200);
+	frameRate(30);
 	cols = floor(width/w);
 	rows = floor(height/w);
 	for (var j = 0; j < rows; j++) {
@@ -35,16 +37,17 @@ function setup() {
 		}
 	}
 	current = grid[0];
-}
-
-function draw() {
-	background(200);
 	for (var i = 0; i < grid.length; i++) {
 		grid[i].show();
 	}
-	//current = grid[0];
-	//alert("Steruj strzałkami aby się poruszać. Dotrzyj do niebieskiego kwadratu. POWODZENIA :D");
+	prev = current;
+}
+var lol = true;
+function draw() {
+	current.show();
+	prev.show();
 	current.highlight(0,255,0);
+
 
 		if (current === winCell) {
 			WinXD();
@@ -55,24 +58,28 @@ function draw() {
 				case UP_ARROW:
 					console.log("up");
 					if (current.walls[0] === false) {
+						prev = current;
 						current = grid[index(current.i,current.j-1)];
 					}
 					break;
 				case RIGHT_ARROW:
 					console.log("right");
 					if (current.walls[1] === false) {
+						prev = current;
 						current = grid[index(current.i+1,current.j)];
 					}
 					break;
 				case DOWN_ARROW:
 					console.log("down");
 					if (current.walls[2] === false) {
+						prev = current;
 						current = grid[index(current.i,current.j+1)];
 					}
 					break;
 				case LEFT_ARROW:
 					console.log("left");
 					if (current.walls[3] === false) {
+						prev = current;
 						current = grid[index(current.i-1,current.j)];
 					}
 					break;
