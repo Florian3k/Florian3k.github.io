@@ -108,7 +108,8 @@ function removeWalls(a,b) {
 
 function WinXD() {
 	noLoop();
-	alert("Wygrałeś xD")
+	alert("Wygrałeś xD");
+	location.reload();
 }
 
 
