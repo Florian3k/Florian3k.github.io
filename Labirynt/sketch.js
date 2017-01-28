@@ -112,6 +112,14 @@ function WinXD() {
 	location.reload();
 }
 
+function hard() {
+	noLoop();
+	grid = [];
+	generating = true;
+	setup();
+	loop();
+}
+
 
 
 
