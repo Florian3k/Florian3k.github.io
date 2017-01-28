@@ -51,7 +51,12 @@ function Cell(i, j) {
 		var x = this.i * w;
 		var y = this.j * w;
 		stroke(51);
-
+    if(this.visited) {
+      noStroke();
+      fill(219, 46, 69);
+      rect(x+1,y+1,w,w);
+    }
+    stroke(51);
     if (this.walls[0]) {
 		  line(x    , y    , x + w, y    );
     }
@@ -65,11 +70,6 @@ function Cell(i, j) {
 		  line(x    , y + w, x    , y    );
     }
 
-    //if(this.visited) {
-    //  noStroke();
-    //  fill(219, 46, 69);
-		//  rect(x+1,y+1,w,w);
-    //}
 	}
 
 }
