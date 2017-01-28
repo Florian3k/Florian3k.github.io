@@ -11,11 +11,11 @@ function Cell(i, j) {
   this.walls = [true, true, true, true];
   this.visited = false;
 
-  this.highlight = function() {
+  this.highlight = function(cR,cG,cB) {
     var x = this.i * w;
 		var y = this.j * w;
     noStroke();
-    fill(0, 255, 0);
+    fill(cR,cG,cB);
     rect(x+1,y+1,w-1,w-1);
   }
 
@@ -70,6 +70,6 @@ function Cell(i, j) {
       fill(219, 46, 69);
 		  rect(x+1,y+1,w,w);
     }
-
 	}
+
 }

@@ -1,15 +1,15 @@
 var cols, rows;
-var w = 40;
+var w = 30;
 var grid = [];
 var stack = [];
-
+var generating = true;
 var current;
+var winCell;
 
 function setup() {
 	createCanvas(601, 601);
 	cols = floor(width/w);
 	rows = floor(height/w);
-
 	for (var j = 0; j < rows; j++) {
 		for (var i = 0; i < rows; i++) {
 			var cell = new Cell(i,j);
@@ -17,37 +17,74 @@ function setup() {
 		}
 	}
 	current = grid[0];
-
+	winCell = grid[grid.length-1];
+	current.visited = true;
 }
 
 function draw() {
 	background(200);
 	for (var i = 0; i < grid.length; i++) {
 		grid[i].show();
-
 	}
-	current.visited = true;
-	current.highlight();
-	// Step 1
-	var next = current.checkNeighbours();
-	if (next) {
-		// Step 2
-		stack.push(current);
-		// Step 3
-		removeWalls(current,next);
-		//Step 4
-		current = next;
-		next.visited = true;
+	if (!current) {
+		generating = false;
+		current = grid[0];
+		alert("Steruj strzałkami aby się poruszać. Dotrzyj do niebieskiego kwadratu. POWODZENIA :D");
+	}
+	current.highlight(0,255,0);
+	if (generating) {
+		// GENERATING
+		// Step 1
+		var next = current.checkNeighbours();
+		if (next) {
+			// Step 2
+			stack.push(current);
+			// Step 3
+			removeWalls(current,next);
+			//Step 4
+			current = next;
+			next.visited = true;
+		} else {
+			current = stack.pop();
+		}
 	} else {
-		current = stack.pop();
+		// GAME
+		if (current === winCell) {
+			WinXD();
+		}
+		winCell.highlight(0,0,255);
+		if (keyIsPressed === true) {
+			switch (keyCode) {
+				case UP_ARROW:
+					console.log("up");
+					if (current.walls[0] === false) {
+						current = grid[index(current.i,current.j-1)];
+					}
+					break;
+				case RIGHT_ARROW:
+					console.log("right");
+					if (current.walls[1] === false) {
+						current = grid[index(current.i+1,current.j)];
+					}
+					break;
+				case DOWN_ARROW:
+					console.log("down");
+					if (current.walls[2] === false) {
+						current = grid[index(current.i,current.j+1)];
+					}
+					break;
+				case LEFT_ARROW:
+					console.log("left");
+					if (current.walls[3] === false) {
+						current = grid[index(current.i-1,current.j)];
+					}
+					break;
+			}
+		}
 	}
 	noFill();
 	stroke(51);
 	rect(0,0,600,600);
-	if(!current) {
-		noLoop();
-	}
-
 }
 
 function removeWalls(a,b) {
@@ -67,6 +104,11 @@ function removeWalls(a,b) {
 		a.walls[2] = false;
 		b.walls[0] = false;
 	}
+}
+
+function WinXD() {
+	noLoop();
+	alert("Wygrałeś xD")
 }
 
 
