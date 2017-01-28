@@ -115,6 +115,7 @@ function WinXD() {
 function hard() {
 	noLoop();
 	grid = [];
+	w = 10;
 	generating = true;
 	setup();
 	loop();
