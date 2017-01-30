@@ -1,7 +1,7 @@
 function Particle(x, y, hue, firework) {
   this.hue = hue;
   this.pos = createVector(x, y);
-  this.lifespan = 255;
+  this.lifespan = 100;
   this.firework = firework;
   //this.vel = createVector(0, -12);
   if (this.firework) {
@@ -19,10 +19,7 @@ function Particle(x, y, hue, firework) {
   this.update = function() {
     if (!this.firework) {
       this.vel.mult(0.9);
-      this.lifespan -= 4;
-      if (this.lifespan < 125) {
-        this.lifespan -= 4;
-      }
+      this.lifespan -= 1;
     }
     this.vel.add(this.acc);
     this.pos.add(this.vel);
