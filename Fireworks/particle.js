@@ -35,7 +35,7 @@ function Particle(x, y, hue, firework) {
     } else {
       strokeWeight(2);
     }
-    stroke(hue + random(-40, 40),
+    stroke((hue + random(-40, 40)+360)%360,
       255 + random(-10, 10),
       this.lifespan + random(-10, 10) );
     point(this.pos.x, this.pos.y);
