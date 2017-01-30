@@ -1,5 +1,5 @@
 function Firework() {
-  this.hue = random(255);
+  this.hue = random(360);
   this.firework =
   new Particle(random(width),height,this.hue,true);
   this.exploded = false;
