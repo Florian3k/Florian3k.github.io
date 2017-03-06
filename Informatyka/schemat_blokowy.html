@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Droga</title>
+    <meta charset="UTF-8">
+		<link rel="stylesheet" href="style1.css">
+  </head>
+  <body>
+    <header><a href="index.html"><button id="backbtn">&larr;BACK</button></a> Schemat blokowy</header>
+    <div class="canvas">
+      <canvas id="myCanvas" width="800" height="1250">
+        Your browser does not support the canvas element.
+      </canvas>
+      <script src="sketch.js"></script>
+    </div>
+    <script>
+      document.getElementById("backbtn").addEventListener("click", function(e){
+        e.preventDefault();
+        location.href = "index.html";
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+body {
+	font-family: Arial;
+}
+header {
+	font-size: 48px;
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 50px;
+}
+div.buttons {
+	max-width: 500px;
+	text-align: center;
+	margin: 20px auto;
+	padding: 50px;
+}
+
+button {
+	font: 32px Arial;
+  transition: transform 125ms ease-out;
+}
+button:hover {
+  transform: scale(.95);
+}
+button:active {
+  transform: scale(.9);
+}
+
+ol {
+	font-size: 24px;
+}
+div.list {
+	max-width: 500px;
+	margin: 20px auto;
+}
+
+div.canvas {
+  text-align: center;
+}
+canvas {
+  border:1px solid #c3c3c3;
+  margin: auto;
+}

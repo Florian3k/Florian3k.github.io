@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Droga</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style1.css">
+	</head>
+	<body>
+		<header>Droga</header>
+		<div class="buttons">
+			<a href="lista_krokow.html"><button id="btn1">Lista kroków</button></a>
+			<a href="schemat_blokowy.html"><button id="btn2">Schemat blokowy</button></a>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+      		document.getElementById("btn1").addEventListener("click", function(e){
+        		e.preventDefault();
+        		location.href = "lista_krokow.html";
+      		});
+      		$("#btn2").click(function(e){
+				e.preventDefault();
+        		location.href = "schemat_blokowy.html";
+      		});
+    </script>
+	</body>
+</html>

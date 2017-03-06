@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Droga</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style1.css">
+  </head>
+  <body>
+    <header><a href="index.html"><button id="backbtn">&larr;BACK</button></a> Lista kroków</header>
+    <div class="list">
+		  <ol type="1">
+		    <li>Wyjdź z domu</li>
+				<li>Zejdź po schodach</li>
+				<li>Idź na przystanek</li>
+				<li>Czekaj na tramwaj</li>
+				<li>Wsiądź do tramwaju</li>
+				<li>Jedź na przystanek "Młodych Techników"</li>
+				<li>Wysiądź z tramwaju</li>
+				<li>Idź do szkoły</li>
+		  </ol>
+	  </div>
+	  <script>
+      document.getElementById("backbtn").addEventListener("click", function(e){
+        e.preventDefault();
+        location.href = "index.html";
+      })
+    </script>
+  </body>
+</html>
