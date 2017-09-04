@@ -14,5 +14,6 @@
 			"type": "image/png",
 			"sizes": "144x144"
 		}
-	]
+	],
+  "start_url": "./?utm_source=homescreen"
 }
