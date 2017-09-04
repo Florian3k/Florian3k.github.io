@@ -1,0 +1,26 @@
+{
+  "short_name": "Plan",
+  "name": "Plan lekcji",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#333",
+  "theme_color": "#333",
+  "icons": [
+    {
+      "src": "static/icons/48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "static/icons/96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "static/icons/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]//,
+  //"start_url": ""
+}
