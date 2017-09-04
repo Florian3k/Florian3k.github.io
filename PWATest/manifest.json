@@ -5,7 +5,7 @@
   "orientation": "portrait",
 	"icons": [
 		{
-			"src": "static/icons/48.png",
+			"src": "ico128.png",
 			"type": "image/png",
 			"sizes": "128x128"
 		}
