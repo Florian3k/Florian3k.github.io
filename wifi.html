@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>XD</title>
+</head>
+<body>
+nazwa sieci: <input id="ssid" type="text" name="ssid"><br>
+hasło: <input id="pass" type="text" name="pass"><br>
+<button id="prep">get this shit done</button>
+<a id="download" href="" download="wifikeyfile.txt" style="display: none">HEHE</a>
+<script>
+	window.URL = window.webkitURL || window.URL;
+	const $ = document.querySelector.bind(document);
+	const download = $("#download")
+	$("#prep").addEventListener("click", function (e) {
+		const ssid = $("#ssid").value;
+		const pass = $("#pass").value;
+		const bb = new Blob([`ssid="${ssid}"
+psk="${pass}"`], {type: 'text/plain'});
+		download.href = window.URL.createObjectURL(bb);
+		download.click();
+	});
+</script>
+</body>
+</html>
