@@ -1,0 +1,15 @@
+{
+	"short_name": "3H Plan",
+	"name": "3H Plan",
+	"display": "standalone",
+	"orientation": "portrait",
+	"icons": [{
+		"src": "ico128.png",
+		"type": "image/png",
+		"sizes": "128x128"
+	},{
+		"src": "ico144.png",
+		"type": "image/png",
+		"sizes": "144x144"
+	}]
+}
