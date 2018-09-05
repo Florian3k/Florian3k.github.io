@@ -1,0 +1,62 @@
+* {
+	box-sizing: inherit;
+}
+html, body {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+}
+
+.header {
+	display: flex;
+	justify-content: stretch;
+	width: 100vw;
+	background-color: #888;
+	color: white;
+}
+
+.header > div {
+	flex: 1;
+	height: 40px;
+
+	font-size: 24px;
+	text-transform: uppercase;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header > .active {
+	background-color: #666;
+}
+
+table {
+	width: 100%;
+	font-size: 20px;
+	margin-bottom: 24px;
+}
+
+table tr {
+	display: flex;
+	justify-content: stretch;
+}
+
+table tr:nth-child(even) {
+	background-color: #ccc;
+}
+
+table tr:nth-child(odd) {
+	background-color: #eee;
+}
+
+.secondary {
+	opacity: .5;
+}
+
+table tr td {
+	/* flex: 1; */
+	padding: 5px 10px;
+	/* display: inline-block */
+}
