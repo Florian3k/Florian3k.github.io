@@ -4,8 +4,12 @@
 	"display": "standalone",
 	"orientation": "portrait",
 	"icons": [{
-		"src": "michal.jpeg",
-		"type": "image/jpeg",
-		"sizes": "200x200"
+		"src": "michal128.png",
+		"type": "image/png",
+		"sizes": "128x128"
+	},{
+		"src": "michal192.png",
+		"type": "image/png",
+		"sizes": "192x192"
 	}]
 }
